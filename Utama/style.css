@@ -1,0 +1,821 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f9fc;
+    color: #202124;
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 250px;
+    background: white;
+    border-right: 1px solid #e5e7eb;
+    padding: 25px 15px;
+    flex-shrink: 0;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 35px;
+    color: #202124;
+}
+
+.merah {
+    color: #ea4335;
+}
+
+.hijau {
+    color: #34a853;
+}
+
+.kuning {
+    color: #fbbc05;
+}
+
+.biru {
+    color: #4285f4;
+}
+
+.menu-label {
+    font-size: 11px;
+    color: #9ca3af;
+    font-weight: bold;
+    margin: 25px 10px 12px;
+}
+
+.menu,
+summary,
+.submenu {
+    display: block;
+    padding: 13px 14px;
+    border-radius: 8px;
+    color: #475569;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+summary {
+    display: list-item;
+    margin-left: 8px;
+}
+
+.submenu {
+    margin-left: 25px;
+    padding: 11px 15px;
+}
+
+.menu:hover,
+summary:hover,
+.submenu:hover {
+    background: #f1f5f9;
+}
+
+.menu.active {
+    background: #fef2f2;
+    color: #ea4335;
+    font-weight: bold;
+    border-left: 3px solid #ea4335;
+}
+
+/* KONTEN UTAMA */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.topbar {
+    height: 70px;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.content {
+    padding: 30px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.subtitle {
+    color: #64748b;
+    margin-top: 8px;
+    margin-bottom: 30px;
+}
+
+/* CARD DASHBOARD */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+}
+
+.card p {
+    color: #64748b;
+    font-size: 14px;
+    margin-top: 0;
+}
+
+.card h2 {
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+.card span {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.card-green {
+    border-top: 4px solid #34a853;
+}
+
+.card-green h2 {
+    color: #188038;
+}
+
+.card-blue {
+    border-top: 4px solid #4285f4;
+}
+
+.card-blue h2 {
+    color: #1a73e8;
+}
+
+.card-yellow {
+    border-top: 4px solid #fbbc05;
+}
+
+.card-yellow h2 {
+    color: #d97706;
+}
+
+.card-red {
+    border-top: 4px solid #ea4335;
+}
+
+.card-red h2 {
+    color: #dc2626;
+}
+
+/* TABEL */
+
+.table-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 25px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.table-header h3 {
+    margin: 0;
+}
+
+.table-header a {
+    color: #4285f4;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+/* TOMBOL LIHAT SEMUA PADA DASHBOARD */
+
+.table-header a.btn-cari {
+    background: #4285f4;
+    color: white;
+    font-size: 13px;
+}
+
+.table-header a.btn-cari:hover {
+    background: #1a73e8;
+    color: white;
+}
+
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background: #f8fafc;
+    color: #475569;
+}
+
+.tag-utama {
+    background: #dcfce7;
+    color: #15803d;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.tag-dadakan {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    .topbar {
+        padding: 15px;
+    }
+}
+
+
+/* MENU SIDEBAR AKTIF */
+.active-submenu {
+    background: #e8f0fe;
+    color: #1a73e8;
+    font-weight: bold;
+}
+
+/* TOMBOL */
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-tambah {
+    background: #34a853;
+}
+
+.btn-tambah:hover {
+    background: #188038;
+}
+
+.btn-cari {
+    background: #4285f4;
+}
+
+.btn-cari:hover {
+    background: #1a73e8;
+}
+
+.btn-edit {
+    background: #fbbc05;
+    color: #202124;
+}
+
+.btn-hapus {
+    background: #ea4335;
+}
+
+.btn-hapus:hover {
+    background: #c5221f;
+}
+
+/* FORM PENCARIAN */
+.filter-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 450px;
+    padding: 11px 14px;
+    border: 1px solid #dadce0;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+/* TOMBOL DALAM TABEL */
+.table-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.table-header .btn {
+    color: white;
+}
+
+@media (max-width: 700px) {
+    .filter-row {
+        flex-direction: column;
+    }
+
+    .search-input {
+        max-width: 100%;
+    }
+
+    .table-header {
+        align-items: flex-start;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+}
+
+
+/* FORM PEMASUKAN */
+
+.form-pemasukan {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-pemasukan h3 {
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #475569;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dadce0;
+    border-radius: 7px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4285f4;
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.btn-kembali {
+    background: #6b7280;
+}
+
+.btn-kembali:hover {
+    background: #4b5563;
+}
+
+
+/* STATUS PEMBAYARAN KEBUTUHAN */
+
+.tag-dibayar {
+    display: inline-block;
+    background: #dcfce7;
+    color: #15803d;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.tag-menunggu {
+    display: inline-block;
+    background: #fef3c7;
+    color: #b45309;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+
+/* INFORMASI STATUS KEBUTUHAN */
+
+.info-status {
+    background: #fef3c7;
+    color: #92400e;
+    padding: 14px;
+    border-radius: 7px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+/* HALAMAN REGISTRASI DAN LOGIN */
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #f7f9fc;
+}
+
+.auth-card {
+    background: white;
+    width: 100%;
+    max-width: 430px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+}
+
+.auth-card .logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-card h1 {
+    font-size: 25px;
+    text-align: center;
+}
+
+.auth-card .subtitle {
+    text-align: center;
+    font-size: 14px;
+}
+
+.auth-button {
+    width: 100%;
+    padding: 13px;
+    font-size: 14px;
+}
+
+.auth-note {
+    text-align: center;
+    color: #9ca3af;
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+
+/* PESAN ERROR LOGIN */
+
+.login-error {
+    background: #fef2f2;
+    color: #dc2626;
+    padding: 12px;
+    border-radius: 7px;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* LINK REGISTRASI */
+
+.auth-link {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 22px;
+    color: #64748b;
+}
+
+.auth-link a {
+    color: #4285f4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* HALAMAN ANGGOTA KELUARGA */
+
+.anggota-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.anggota-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+}
+
+.anggota-avatar {
+    width: 65px;
+    height: 65px;
+    background: #e8f0fe;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px;
+    font-size: 30px;
+}
+
+.anggota-card h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.anggota-role {
+    color: #94a3b8;
+    font-size: 13px;
+    margin: 8px 0 25px;
+}
+
+.anggota-stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 13px;
+}
+
+.anggota-stat span {
+    color: #64748b;
+}
+
+.anggota-stat strong {
+    color: #202124;
+}
+
+.btn-lihat {
+    display: block;
+    background: #4285f4;
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn-lihat:hover {
+    background: #1a73e8;
+}
+
+@media (max-width: 1100px) {
+    .anggota-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .anggota-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* NOMOR ANTRIAN PRIORITAS */
+
+.nomor-prioritas {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e8f0fe;
+    color: #1a73e8;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+/* DASHBOARD AYAH */
+
+.btn-bayar {
+    background: #34a853;
+    color: white;
+    white-space: nowrap;
+}
+
+.btn-bayar:hover {
+    background: #188038;
+}
+
+/* FORM KONFIRMASI PEMBAYARAN */
+
+.bayar-card {
+    max-width: 520px;
+}
+
+.detail-pembayaran {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.detail-pembayaran p {
+    font-size: 12px;
+    color: #64748b;
+    margin: 15px 0 6px;
+}
+
+.detail-pembayaran h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.detail-pembayaran h2 {
+    color: #188038;
+    font-size: 26px;
+    margin: 5px 0;
+}
+
+.detail-pembayaran strong {
+    font-size: 14px;
+}
+
+
+
+/* LINK DASHBOARD AYAH */
+
+.sidebar .ayah-dashboard-link,
+.sidebar .ayah-dashboard-link:link,
+.sidebar .ayah-dashboard-link:visited,
+.sidebar .ayah-dashboard-link:hover {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+/* LINK DASHBOARD AYAH */
+
+.sidebar .ayah-dashboard-link,
+.sidebar .ayah-dashboard-link:link,
+.sidebar .ayah-dashboard-link:visited,
+.sidebar .ayah-dashboard-link:hover {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* PANAH SAAT MENU TERTUTUP */
+.sidebar details > summary.ayah-summary::before {
+    content: "▶";
+    font-size: 11px;
+}
+
+/* PANAH SAAT MENU TERBUKA */
+.sidebar details[open] > summary.ayah-summary::before {
+    content: "▼";
+}
+
+/* HILANGKAN WARNA UNGU DAN GARIS BAWAH
+
+.sidebar details > summary.ayah-summary.active a,
+.sidebar details > summary.ayah-summary.active a:visited,
+.sidebar details > summary.ayah-summary.active a:hover {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: bold;
+} */
+
+/* DASHBOARD AYAH AKTIF - WARNA BIRU */
+
+.sidebar details > summary.ayah-summary.active {
+    background: #e8f0fe;
+    color: #1a73e8;
+    border-left: 3px solid #4285f4;
+    font-weight: bold;
+}
+
+/* HILANGKAN WARNA UNGU DAN GARIS BAWAH */
+
+.sidebar details > summary.ayah-summary.active a,
+.sidebar details > summary.ayah-summary.active a:visited,
+.sidebar details > summary.ayah-summary.active a:hover {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* PANAH DASHBOARD AYAH IKUT BIRU */
+
+.sidebar details > summary.ayah-summary.active::before {
+    color: #1a73e8;
+}
+
+
+/* FOTO LAPORAN PADA TABEL */
+
+.foto-laporan {
+    width: 70px;
+    height: 70px;
+    max-width: 70px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+/* FOTO PADA FORM LAPORAN */
+
+.foto-laporan-preview {
+    width: 100%;
+    max-width: 240px;
+    max-height: 200px;
+    object-fit: contain;
+    display: block;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* WARNA LINK DASHBOARD AYAH */
+
+.sidebar .ayah-summary .ayah-dashboard-link,
+.sidebar .ayah-summary .ayah-dashboard-link:link,
+.sidebar .ayah-summary .ayah-dashboard-link:visited,
+.sidebar .ayah-summary .ayah-dashboard-link:hover {
+    color: #475569 !important;
+    text-decoration: none !important;
+}
+
+/* WARNA SAAT DASHBOARD AYAH AKTIF */
+
+.sidebar .ayah-summary.active .ayah-dashboard-link,
+.sidebar .ayah-summary.active .ayah-dashboard-link:visited {
+    color: #1a73e8 !important;
+    font-weight: bold;
+}
+
+
